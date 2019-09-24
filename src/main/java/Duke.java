@@ -40,6 +40,7 @@ public class Duke{
      */
     public void run(){
         ui.showWelcome();
+        account.populateCurrentMonthLists();
         if(account.isToInitialize()){
             System.out.println("You're a first time user, Please Enter your existing savings and Avg monthly expenditure");
             while(ui.inputStatus()){

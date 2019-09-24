@@ -1,5 +1,6 @@
 package Money;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -39,7 +40,8 @@ public class Account {
             IncomeListTotal.add(InitialSavings);
             this.BaseSavings = TotalSavings;
             this.GoalSavings = 0;
-        }toInitialize = false;
+        }
+        toInitialize = false;
     }
 
     public ArrayList<Income> getIncomeListTotal() {
@@ -109,7 +111,7 @@ public class Account {
         return GoalSavings;
     }
 
-    public void UpdateSavings() {
+    public void updateSavings() {
         TotalSavings = getTotalIncome() - getTotalExp();
         CurrMonthSavings = getCurrMonthIncome() - getCurrMonthExp();
         GoalSavings = getTotalSavings() - getBaseSavings();
@@ -117,5 +119,21 @@ public class Account {
 
     public boolean isToInitialize() {
         return toInitialize;
+    }
+
+    public void populateCurrentMonthLists() {
+        Date currDate = new Date();
+        int currMonth = currDate.getMonth(); // there's an issue here of depreciation
+        int currYear = currDate.getYear();
+        for (Income i : IncomeListTotal) {
+            if (i.getPayday().getMonth() == currMonth && i.getPayday().getYear() == currYear) {
+                IncomeListCurrMonth.add(i);
+            }
+        }
+        for (Expenditure e : ExpListTotal) {
+            if (e.getDateBoughtTime().getMonth() == currMonth && e.getDateBoughtTime().getYear() == currYear) {
+                ExpListCurrMonth.add(e);
+            }
+        }
     }
 }

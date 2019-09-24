@@ -91,6 +91,14 @@ public class Parser {
             moneyCommand = new AddIncomeCommand(cmd);
         } else if (cmd.startsWith("spent")) {
             moneyCommand = new AddExpenditureCommand(cmd);
+        } else if (cmd.equals("list all income")) {
+            moneyCommand = new ListTotalIncomeCommand();
+        } else if (cmd.equals("list all expenditure")) {
+            moneyCommand = new ListTotalExpenditureCommand();
+        } else if (cmd.startsWith("delete income")) {
+            moneyCommand = new DeleteIncomeCommand(cmd);
+        } else if (cmd.startsWith("delete expenditure")) {
+            moneyCommand = new DeleteExpenditureCommand(cmd);
 
         } else {
             throw new DukeException("OOPS!!! I'm sorry, but I don't know what that means");

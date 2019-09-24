@@ -38,6 +38,7 @@ public class AddExpenditureCommand extends MoneyCommand {
         Expenditure e = new Expenditure(price, description, category, boughtTime);
         account.getExpListTotal().add(e);
 
+
         System.out.println(" Got it. I've added this to your total spending: \n");
         System.out.println("     " + account.getExpListTotal().get(account.getExpListTotal().size() - 1).toString() + "\n");
         System.out.println(" Now you have " + account.getExpListTotal().size() + " expenses listed");
