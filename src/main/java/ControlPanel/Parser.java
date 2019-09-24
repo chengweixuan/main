@@ -87,8 +87,12 @@ public class Parser {
             String temp = cmd.replaceAll("[^0-9]", "");
             int serialNo = Integer.parseInt(temp);
             moneyCommand = new DeleteGoalCommand(serialNo);
+        } else if (cmd.startsWith("add income")) {
+            moneyCommand = new AddIncomeCommand(cmd);
+        } else if (cmd.startsWith("spent")) {
+            moneyCommand = new AddExpenditureCommand(cmd);
 
-        }else{
+        } else {
             throw new DukeException("OOPS!!! I'm sorry, but I don't know what that means");
         }
 

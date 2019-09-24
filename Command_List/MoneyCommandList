@@ -3,3 +3,5 @@ goal-short buy Lambo /amt 100000 /by 10/12/2040 /priority medium
 goal-short buy Boat /amt 100000 /by 11/12/2050 /priority low
 list goals
 delete goal 2
+add income TA /amt 560 /payday 10/12/2040 0900
+spent ice cream /amt 3 /cat food /on 10/12/2040 1800

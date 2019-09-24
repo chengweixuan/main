@@ -13,4 +13,10 @@ public class Income extends Item {
     public Date getPayday() {
         return payday;
     }
+
+    @Override
+    public String toString() {
+        return "[I]" + " " + super.getDescription() + "(salary: $" + super.getPrice() + ") (Paid On: " +
+                getPayday() + ")";
+    }
 }
