@@ -2,6 +2,7 @@ package Money;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Account {
@@ -123,9 +124,11 @@ public class Account {
 
     public void populateCurrentMonthLists() {
         Date currDate = new Date();
+        Calendar dateNow = Calendar.getInstance();
         int currMonth = currDate.getMonth(); // there's an issue here of depreciation
         int currYear = currDate.getYear();
         for (Income i : IncomeListTotal) {
+            Calendar cal = Calendar.getInstance();
             if (i.getPayday().getMonth() == currMonth && i.getPayday().getYear() == currYear) {
                 IncomeListCurrMonth.add(i);
             }

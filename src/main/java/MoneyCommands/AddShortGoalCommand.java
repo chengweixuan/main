@@ -14,7 +14,7 @@ public class AddShortGoalCommand extends MoneyCommand {
 
     public AddShortGoalCommand(String cmd){
         inputString = cmd;
-        simpleDateFormat  = new SimpleDateFormat("d/M/yyyy HHmm");
+        simpleDateFormat  = new SimpleDateFormat("d/M/yyyy");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class AddShortGoalCommand extends MoneyCommand {
 
                 String desc = inputString.split("/amt ")[0].replaceFirst("goal-short ", "");
                 float price = Float.parseFloat(inputString.split("/amt ")[1].split("/by ")[0]);
-                Date byDate = simpleDateFormat.parse(inputString.split("/by ")[1].split("/priority ")[0] + "2359");
+                Date byDate = simpleDateFormat.parse(inputString.split("/by ")[1].split("/priority ")[0]);
                 String priorityLevel = inputString.split("/priority ")[1];
                 String category = "GS";
                 //System.out.println(priorityLevel);

@@ -17,7 +17,7 @@ public class AddIncomeCommand extends MoneyCommand {
 
     public AddIncomeCommand(String command) {
         inputString = command.replaceFirst("add income ", "");
-        simpleDateFormat  = new SimpleDateFormat("d/M/yyyy HHmm");
+        simpleDateFormat  = new SimpleDateFormat("d/M/yyyy");
     }
 
     @Override

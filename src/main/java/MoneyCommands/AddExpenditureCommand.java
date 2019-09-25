@@ -5,7 +5,7 @@ import ControlPanel.Storage;
 import ControlPanel.Ui;
 import Money.Account;
 import Money.Expenditure;
-import Money.Income;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,7 +18,7 @@ public class AddExpenditureCommand extends MoneyCommand {
 
     public AddExpenditureCommand(String command) {
         inputString = command.replaceFirst("spent ", "");
-        simpleDateFormat = new SimpleDateFormat("d/M/yyyy HHmm");
+        simpleDateFormat = new SimpleDateFormat("d/M/yyyy");
     }
 
     @Override
